@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\planificadorentrenamientoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\planificadorentrenamientoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +38,49 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\appsettings.json",
+              "RelativeToolTip": "PlanificadorEntrenamientoAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-01T19:56:36.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "PlanificadorEntrenamientoAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj",
+              "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj",
+              "ToolTip": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj",
+              "RelativeToolTip": "PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-01T19:49:46.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\Dockerfile",
+              "ToolTip": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Dockerfile",
+              "RelativeToolTip": "PlanificadorEntrenamientoAPI\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T19:49:55.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Program.cs",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\Program.cs",
@@ -38,12 +88,11 @@
               "RelativeToolTip": "PlanificadorEntrenamientoAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T18:53:10.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T18:53:10.269Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\DTOs\\LoginDTO.cs",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\DTOs\\LoginDTO.cs",
@@ -51,12 +100,11 @@
               "RelativeToolTip": "PlanificadorEntrenamientoAPI\\DTOs\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T18:52:42.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T18:52:42.168Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "UsuarioCreateDTO.cs",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\DTOs\\UsuarioCreateDTO.cs",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\DTOs\\UsuarioCreateDTO.cs",
@@ -64,12 +112,11 @@
               "RelativeToolTip": "PlanificadorEntrenamientoAPI\\DTOs\\UsuarioCreateDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T18:39:54.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T18:39:54.894Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
@@ -77,8 +124,7 @@
               "RelativeToolTip": "PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowDEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T17:52:32.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T17:52:32.325Z"
             }
           ]
         }
