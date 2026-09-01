@@ -119,3 +119,4 @@ C:\Users\fpabl\source\PlanificadorEntrenamientoAPI\PlanificadorEntrenamientoAPI\
 C:\Users\fpabl\source\PlanificadorEntrenamientoAPI\PlanificadorEntrenamientoAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\fpabl\source\PlanificadorEntrenamientoAPI\PlanificadorEntrenamientoAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\fpabl\source\PlanificadorEntrenamientoAPI\PlanificadorEntrenamientoAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\fpabl\source\PlanificadorEntrenamientoAPI\PlanificadorEntrenamientoAPI\obj\Debug\net8.0\PlanificadorEntrenamientoAPI.sourcelink.json
