@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlanificadorEntrenamientoAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7924b27c5a1320174b7e86c3ccfeb4c14858fe7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f176a2d69e35c22a5038fdead8208b285abfd93e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlanificadorEntrenamientoAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlanificadorEntrenamientoAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
