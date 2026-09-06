@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\planificadorentrenamientoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\planificadorentrenamientoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|solutionrelative:planificadorentrenamientoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6DFE1BB-D8BA-42C4-9A66-CE9A9705E269}|PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj|c:\\users\\fpabl\\source\\planificadorentrenamientoapi\\planificadorentrenamientoapi\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\appsettings.json",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\appsettings.json",
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlanificadorEntrenamientoAPI.csproj",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI.csproj",
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Dockerfile",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\Dockerfile",
@@ -78,13 +78,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Program.cs",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\Program.cs",
               "ToolTip": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Program.cs",
               "RelativeToolTip": "PlanificadorEntrenamientoAPI\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAqwEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAqwE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-01T18:53:10.269Z",
               "EditorCaption": ""
@@ -115,15 +115,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\fpabl\\source\\PlanificadorEntrenamientoAPI\\PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "PlanificadorEntrenamientoAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDEAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAwwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T17:52:32.325Z"
+              "WhenOpened": "2026-09-01T17:52:32.325Z",
+              "EditorCaption": ""
             }
           ]
         }

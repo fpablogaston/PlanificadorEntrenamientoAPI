@@ -6,6 +6,7 @@ using PlanificadorEntrenamientoAPI.DTOs;
 using PlanificadorEntrenamientoAPI.Models;
 using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace PlanificadorEntrenamientoAPI.Controllers
@@ -56,9 +57,17 @@ namespace PlanificadorEntrenamientoAPI.Controllers
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+                new Claim("userId", encontrarUsuario.Id.ToString()),
+                new Claim("email", encontrarUsuario.Email ?? ""),
+                new Claim("rol", encontrarUsuario.Rol ?? "")
+            };
+
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
-                claims: null,
+                claims: claims,
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds
             );
