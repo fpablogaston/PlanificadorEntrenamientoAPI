@@ -10,7 +10,7 @@
         public int DiaRutinaId  { get; set; }
         public DiaRutina? DiaRutina { get; set; }
 
-        public List<Serie>? Series { get; set; }
+        public List<Serie> Series { get; set; } = new();
 
     }
 }

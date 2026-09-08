@@ -23,7 +23,11 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         [HttpGet]
         public IEnumerable<Rutina> Get()
         {
-            return _context.Rutinas;
+            return _context.Rutinas
+             .Include(r => r.DiasRutina)
+                 .ThenInclude(d => d.Ejercicios)
+                     .ThenInclude(e => e.Series)
+             .ToList();
         }
 
         [HttpGet("{id}")]
@@ -70,8 +74,8 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             }
 
             ModificarRutina.Nombre = rutina.Nombre;
-            ModificarRutina.UsuarioId = rutina.UsuarioId;
-            ModificarRutina.Usuario = rutina.Usuario;
+            ModificarRutina.AlumnoId = rutina.AlumnoId;
+            ModificarRutina.Alumno = rutina.Alumno;
 
             _context.SaveChanges();
             return Ok();

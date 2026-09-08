@@ -7,7 +7,7 @@
         public int RutinaId { get; set; }
         public Rutina? Rutina { get; set; }
 
-        public List<Ejercicio>? Ejercicios { get; set; }
+        public List<Ejercicio> Ejercicios { get; set; } = new();
 
     }
 }

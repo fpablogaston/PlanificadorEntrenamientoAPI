@@ -24,22 +24,46 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             _configuration = configuration;
         }
 
+
         [HttpPost("register")]
         public IActionResult Register([FromBody]UsuarioCreateDTO usuario)
         {
+
+           var rolUsuario =  Enum.TryParse<RolUsuario>(usuario.Rol, out var rolConvertido);
+           if (rolUsuario == false)
+           {
+              return BadRequest("El usuario es invalido");
+           }
+           
             var nuevoUsuario = new Usuario
             {
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido,
                 Email = usuario.Email,
                 Password = usuario.Password,
-                Rol = usuario.Rol,
+                Rol = rolConvertido,
             };
 
             _context.Usuarios.Add(nuevoUsuario);
             _context.SaveChanges();
-            return Ok(nuevoUsuario);
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
+            {
+                new Claim("userId", nuevoUsuario.Id.ToString()),
+                new Claim("email", nuevoUsuario.Email ?? ""),
+                new Claim("rol", rolConvertido.ToString())
+            };
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds
+            );
+            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
         }
+
 
         [HttpPost("Login")]
         public IActionResult Login([FromBody] LoginDTO usuario)
@@ -62,7 +86,7 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             {
                 new Claim("userId", encontrarUsuario.Id.ToString()),
                 new Claim("email", encontrarUsuario.Email ?? ""),
-                new Claim("rol", encontrarUsuario.Rol ?? "")
+                new Claim("rol", encontrarUsuario.Rol.ToString())
             };
 
             var token = new JwtSecurityToken(

@@ -7,7 +7,11 @@
         public string? Apellido { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
-        public string? Rol {  get; set; }
+        public RolUsuario Rol {  get; set; }
 
+        public int? EntrenadorId { get; set; }
+        public Usuario? Entrenador { get; set; }
+
+        public ICollection<Usuario>? Alumnos { get; set; }
     }
 }
