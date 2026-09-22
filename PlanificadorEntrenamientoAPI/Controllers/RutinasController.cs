@@ -23,17 +23,25 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         [HttpGet]
         public IEnumerable<Rutina> Get()
         {
-            return _context.Rutinas
-             .Include(r => r.DiasRutina)
-                 .ThenInclude(d => d.Ejercicios)
-                     .ThenInclude(e => e.Series)
-             .ToList();
-        }
 
+            var entrenadorIdTexto = User.FindFirst("userId")?.Value;
+            var entrenadorId = int.Parse(entrenadorIdTexto); 
+
+            return _context.Rutinas
+                 .Include(r => r.DiasRutina)
+                 .ThenInclude(d => d.Ejercicios)
+                 .ThenInclude(e => e.Series)
+                 .Where(r => r.EntrenadorId == entrenadorId)
+                 .ToList();
+        }
+        
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var ObtenerId = _context.Rutinas.FirstOrDefault(x => x.Id == id);
+            var entrenadorIdTexto = User.FindFirst("userId")?.Value;
+            var entrenadorId = int.Parse(entrenadorIdTexto);
+
+            var ObtenerId = _context.Rutinas.FirstOrDefault(x => x.Id == id && x.EntrenadorId == entrenadorId);
             if (ObtenerId == null)
             {
                 return NotFound();
@@ -42,9 +50,14 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             return Ok(ObtenerId);
         }
 
+
         [HttpPost]
         public IActionResult Post([FromBody]Rutina rutina)
         {
+            var entrenadorIdTexto = User.FindFirst("userId")?.Value;
+            var entrenadorId = int.Parse(entrenadorIdTexto);
+
+            rutina.EntrenadorId = entrenadorId;
             _context.Rutinas.Add(rutina);
             _context.SaveChanges();
             return Ok();
@@ -53,7 +66,10 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var EliminarRutina = _context.Rutinas.FirstOrDefault(x => x.Id == id);
+            var entrenadorIdTexto = User.FindFirst("userId")?.Value;
+            var entrenadorId = int.Parse(entrenadorIdTexto);
+
+            var EliminarRutina = _context.Rutinas.FirstOrDefault(x => x.Id == id && x.EntrenadorId == entrenadorId);
             if (EliminarRutina == null)
             {
                 return NotFound();
@@ -62,11 +78,15 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             _context.SaveChanges();
             return Ok();
         }
+        
 
         [HttpPut("{id}")]
         public IActionResult Put([FromBody] Rutina rutina, int id)
         {
-            var ModificarRutina = _context.Rutinas.FirstOrDefault(x =>x.Id == id);
+            var entrenadorIdTexto = User.FindFirst("userId")?.Value;
+            var entrenadorId = int.Parse(entrenadorIdTexto);
+
+            var ModificarRutina = _context.Rutinas.FirstOrDefault(x =>x.Id == id && x.EntrenadorId == entrenadorId);
 
             if(ModificarRutina == null)
             {
@@ -80,6 +100,5 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             _context.SaveChanges();
             return Ok();
         }
-
     }
 }
