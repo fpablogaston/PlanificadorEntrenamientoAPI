@@ -40,7 +40,7 @@ namespace PlanificadorEntrenamientoAPI.Controllers
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido,
                 Email = usuario.Email,
-                Password = usuario.Password,
+                Password = BCrypt.Net.BCrypt.HashPassword(usuario.Password),
                 Rol = rolConvertido,
             };
 
@@ -82,7 +82,7 @@ namespace PlanificadorEntrenamientoAPI.Controllers
                 return Unauthorized();
             }
 
-            if(encontrarUsuario.Password != usuario.Password)
+            if (!BCrypt.Net.BCrypt.Verify(usuario.Password, encontrarUsuario.Password))
             {
                 return Unauthorized();
             }
@@ -110,7 +110,6 @@ namespace PlanificadorEntrenamientoAPI.Controllers
                 Rol = encontrarUsuario.Rol,
                 Token = new JwtSecurityTokenHandler().WriteToken(token)
             };
-
             return Ok(respuesta);
         }
         
