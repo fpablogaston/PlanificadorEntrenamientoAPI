@@ -61,7 +61,15 @@ namespace PlanificadorEntrenamientoAPI.Controllers
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds
             );
-            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+
+            var respuesta = new RegisterResponseDTO
+            {
+                Nombre = nuevoUsuario.Nombre,
+                Rol = nuevoUsuario.Rol,
+                Token = new JwtSecurityTokenHandler().WriteToken(token)
+            };
+
+            return Ok(respuesta);
         }
 
 
@@ -95,8 +103,15 @@ namespace PlanificadorEntrenamientoAPI.Controllers
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds
             );
-            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
 
+            var respuesta = new LoginResponseDTO
+            {
+                Nombre = encontrarUsuario.Nombre,
+                Rol = encontrarUsuario.Rol,
+                Token = new JwtSecurityTokenHandler().WriteToken(token)
+            };
+
+            return Ok(respuesta);
         }
         
     }
