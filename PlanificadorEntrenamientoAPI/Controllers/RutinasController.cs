@@ -24,7 +24,6 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         [HttpGet]
         public IEnumerable<RutinaResponseDTO> Get()
         {
-
             var entrenadorIdTexto = User.FindFirst("userId")?.Value;
             var entrenadorId = int.Parse(entrenadorIdTexto); 
 

@@ -73,6 +73,16 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = 500;
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsync("{\"error\": \"Ocurrió un error interno\"}");
+    });
+});
+
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
