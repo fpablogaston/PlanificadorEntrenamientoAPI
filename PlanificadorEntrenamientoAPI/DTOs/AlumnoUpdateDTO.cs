@@ -2,12 +2,15 @@
 
 namespace PlanificadorEntrenamientoAPI.DTOs
 {
-    public class RutinaCreateDTO
+    public class AlumnoUpdateDTO
     {
         [Required]
         public string? Nombre { get; set; }
-        [Range(1, int.MaxValue)]
-        public int AlumnoId { get; set; }
 
+        [Required]
+        public string? Apellido { get; set; }
+
+        [EmailAddress]
+        public string? Email { get; set; }
     }
 }
