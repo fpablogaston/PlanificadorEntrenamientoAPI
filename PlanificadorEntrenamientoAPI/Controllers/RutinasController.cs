@@ -25,29 +25,60 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         public IEnumerable<RutinaResponseDTO> Get()
         {
             var entrenadorIdTexto = User.FindFirst("userId")?.Value;
-            var entrenadorId = int.Parse(entrenadorIdTexto); 
+            var usuarioId = int.Parse(entrenadorIdTexto);
 
-            return _context.Rutinas
-                 .Include(r => r.DiasRutina)
-                 .Include(r => r.Alumno)
-                 .Include(r => r.Entrenador)
-                 .Where(r => r.EntrenadorId == entrenadorId)
-                 .Select(r => new RutinaResponseDTO
-                 {
-                     Id = r.Id,
-                     Nombre = r.Nombre,
-                     AlumnoId = r.AlumnoId,
-                     EntrenadorId = r.EntrenadorId,
-                     Alumno = new UsuarioResumenDTO { Nombre = r.Alumno.Nombre },   
-                     Entrenador = new UsuarioResumenDTO { Nombre = r.Entrenador.Nombre},
-                     DiasRutina = r.DiasRutina.Select(d => new DiaRutinaResponseDTO
+            var rolTexto = User.FindFirst("rol")?.Value;
+
+            List<RutinaResponseDTO> rutinas;
+            
+            if (rolTexto == "Entrenador")
+            {
+                 rutinas = _context.Rutinas
+                     .Include(r => r.DiasRutina)
+                     .Include(r => r.Alumno)
+                     .Include(r => r.Entrenador)
+                     .Where(r => r.EntrenadorId == usuarioId)
+                     .Select(r => new RutinaResponseDTO
                      {
-                         Id = d.Id,
-                         NombreDia = d.NombreDia,
-                         RutinaId = d.RutinaId
-                     }).ToList()
-                 })
-                 .ToList();
+                         Id = r.Id,
+                         Nombre = r.Nombre,
+                         AlumnoId = r.AlumnoId,
+                         EntrenadorId = r.EntrenadorId,
+                         Alumno = new UsuarioResumenDTO { Nombre = r.Alumno.Nombre },
+                         Entrenador = new UsuarioResumenDTO { Nombre = r.Entrenador.Nombre },
+                         DiasRutina = r.DiasRutina.Select(d => new DiaRutinaResponseDTO
+                         {
+                             Id = d.Id,
+                             NombreDia = d.NombreDia,
+                             RutinaId = d.RutinaId
+                         }).ToList()
+                     })
+                     .ToList();
+            } else
+            {
+               rutinas = _context.Rutinas
+                     .Include(r => r.DiasRutina)
+                     .Include(r => r.Alumno)
+                     .Include(r => r.Entrenador)
+                     .Where(r => r.AlumnoId == usuarioId)
+                     .Select(r => new RutinaResponseDTO
+                     {
+                         Id = r.Id,
+                         Nombre = r.Nombre,
+                         AlumnoId = r.AlumnoId,
+                         EntrenadorId = r.EntrenadorId,
+                         Alumno = new UsuarioResumenDTO { Nombre = r.Alumno.Nombre },
+                         Entrenador = new UsuarioResumenDTO { Nombre = r.Entrenador.Nombre },
+                         DiasRutina = r.DiasRutina.Select(d => new DiaRutinaResponseDTO
+                         {
+                             Id = d.Id,
+                             NombreDia = d.NombreDia,
+                             RutinaId = d.RutinaId
+                         }).ToList()
+                     })
+                     .ToList();
+            }
+            return rutinas;
         }
 
         
