@@ -26,20 +26,45 @@ namespace PlanificadorEntrenamientoAPI.Controllers
             var entrenadorIdTexto = User.FindFirst("userId")?.Value;
             var entrenadorId = int.Parse(entrenadorIdTexto);
 
-            return _context.Ejercicios
-                .Include(e => e.DiaRutina)
-                .ThenInclude(d => d.Rutina)
-                .Where(e => e.DiaRutina.Rutina.EntrenadorId == entrenadorId)
-                .Select(e => new EjercicioResponseDTO
-                 {
-                    Id = e.Id,
-                    Nombre = e.Nombre,
-                    Descripcion = e.Descripcion,
-                    UrlImagen = e.UrlImagen,
-                    UrlVideo = e.UrlVideo,
-                    DiaRutinaId = e.DiaRutinaId,
-                 })
-                .ToList();
+            var rolTexto = User.FindFirst("rol")?.Value;
+
+            List<EjercicioResponseDTO> ejercicioRutina;
+
+            if(rolTexto == "Entrenador")
+            {
+              ejercicioRutina =  _context.Ejercicios
+                    .Include(e => e.DiaRutina)
+                    .ThenInclude(d => d.Rutina)
+                    .Where(e => e.DiaRutina.Rutina.EntrenadorId == entrenadorId)
+                    .Select(e => new EjercicioResponseDTO
+                    {
+                        Id = e.Id,
+                        Nombre = e.Nombre,
+                        Descripcion = e.Descripcion,
+                        UrlImagen = e.UrlImagen,
+                        UrlVideo = e.UrlVideo,
+                        DiaRutinaId = e.DiaRutinaId,
+                    })
+                    .ToList();
+            } else
+            {
+                ejercicioRutina = _context.Ejercicios
+                    .Include(e => e.DiaRutina)
+                    .ThenInclude(d => d.Rutina)
+                    .Where(e => e.DiaRutina.Rutina.AlumnoId == entrenadorId)
+                    .Select(e => new EjercicioResponseDTO
+                    {
+                        Id = e.Id,
+                        Nombre = e.Nombre,
+                        Descripcion = e.Descripcion,
+                        UrlImagen = e.UrlImagen,
+                        UrlVideo = e.UrlVideo,
+                        DiaRutinaId = e.DiaRutinaId,
+                    })
+                    .ToList();
+            }
+
+            return ejercicioRutina;
         }
 
 

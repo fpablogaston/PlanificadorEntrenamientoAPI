@@ -25,22 +25,47 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         {
             var entrenadorIdTexto = User.FindFirst("userId")?.Value;
             var entrenadorId = int.Parse(entrenadorIdTexto);
+            var rolTexto = User.FindFirst("rol")?.Value;
 
-            return _context.Series
-                .Include(s => s.Ejercicio)
-                .ThenInclude(e => e.DiaRutina)
-                .ThenInclude(d => d.Rutina)
-                .Where(s => s.Ejercicio.DiaRutina.Rutina.EntrenadorId == entrenadorId)
-                .Select(s => new SerieResponseDTO
-                {
-                    Id = s.Id,
-                    NumeroSerie = s.NumeroSerie,
-                    Repeticiones = s.Repeticiones,
-                    Kg = s.Kg,
-                    Rir = s.Rir,
-                    EjercicioId = s.EjercicioId,
-                })
-                .ToList();
+            List<SerieResponseDTO> serieRutina;
+            
+            if(rolTexto == "Entrenador")
+            {
+                serieRutina = _context.Series
+                    .Include(s => s.Ejercicio)
+                    .ThenInclude(e => e.DiaRutina)
+                    .ThenInclude(d => d.Rutina)
+                    .Where(s => s.Ejercicio.DiaRutina.Rutina.EntrenadorId == entrenadorId)
+                    .Select(s => new SerieResponseDTO
+                    {
+                        Id = s.Id,
+                        NumeroSerie = s.NumeroSerie,
+                        Repeticiones = s.Repeticiones,
+                        Kg = s.Kg,
+                        Rir = s.Rir,
+                        EjercicioId = s.EjercicioId,
+                    })
+                    .ToList();
+            } else
+            {
+                serieRutina = _context.Series
+                    .Include(s => s.Ejercicio)
+                    .ThenInclude(e => e.DiaRutina)
+                    .ThenInclude(d => d.Rutina)
+                    .Where(s => s.Ejercicio.DiaRutina.Rutina.AlumnoId == entrenadorId)
+                    .Select(s => new SerieResponseDTO
+                    {
+                        Id = s.Id,
+                        NumeroSerie = s.NumeroSerie,
+                        Repeticiones = s.Repeticiones,
+                        Kg = s.Kg,
+                        Rir = s.Rir,
+                        EjercicioId = s.EjercicioId,
+                    })
+                    .ToList();
+            }
+
+            return serieRutina;
         }
 
 

@@ -26,17 +26,37 @@ namespace PlanificadorEntrenamientoAPI.Controllers
         {
             var entrenadorIdTexto = User.FindFirst("userId")?.Value;
             var entrenadorId = int.Parse(entrenadorIdTexto);
+            var rolTexto = User.FindFirst("rol")?.Value;
 
-            return _context.DiasRutina
-                .Include(d => d.Rutina)
-                .Where(d => d.Rutina.EntrenadorId == entrenadorId)
-                .Select(d => new DiaRutinaResponseDTO
-                {
-                    Id = d.Id,
-                    NombreDia = d.NombreDia,
-                    RutinaId = d.RutinaId,
-                })
-                .ToList();
+            List<DiaRutinaResponseDTO> diaRutina;
+
+            if(rolTexto == "Entrenador")
+            {
+                diaRutina = _context.DiasRutina
+                    .Include(d => d.Rutina)
+                    .Where(d => d.Rutina.EntrenadorId == entrenadorId)
+                    .Select(d => new DiaRutinaResponseDTO
+                    {
+                        Id = d.Id,
+                        NombreDia = d.NombreDia,
+                        RutinaId = d.RutinaId,
+                    })
+                    .ToList();
+            } else 
+            {
+                diaRutina = _context.DiasRutina
+                    .Include(d => d.Rutina)
+                    .Where(d => d.Rutina.AlumnoId == entrenadorId)
+                    .Select(d => new DiaRutinaResponseDTO
+                    {
+                        Id = d.Id,
+                        NombreDia = d.NombreDia,
+                        RutinaId = d.RutinaId,
+                    })
+                    .ToList();
+            }
+
+            return diaRutina;
         }
 
 
